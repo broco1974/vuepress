@@ -26,9 +26,10 @@ program
   .command('dev [targetDir]')
   .description('start development server')
   .option('-p, --port <port>', 'use specified port (default: 8080)')
+  .option('-q, --hotPort <hotPort>', 'use specified hot port (default: 8081)')
   .option('-h, --host <host>', 'use specified host (default: 0.0.0.0)')
-  .action((dir = '.', { host, port }) => {
-    wrapCommand(dev)(path.resolve(dir), { host, port })
+  .action((dir = '.', { host, port, hotPort }) => {
+    wrapCommand(dev)(path.resolve(dir), { host, port, hotPort })
   })
 
 program
